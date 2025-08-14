@@ -2,7 +2,7 @@ export default function TaskRow({ task, onUpdated, onDeleted }) {
     const handleDelete = async () => {
       if (!window.confirm('Are you sure you want to delete this task?')) return;
       try {
-        const res = await fetch(`http://localhost:5000/api/tasks/delete/${task._id}`, {
+        const res = await fetch(`https://final-backend-ubty.onrender.com/api/tasks/delete/${task._id}`, {
           method: 'DELETE',
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -17,7 +17,7 @@ export default function TaskRow({ task, onUpdated, onDeleted }) {
       const newActivity = prompt('Edit task:', task.activity);
       if (!newActivity) return;
       try {
-        const res = await fetch(`http://localhost:5000/api/tasks/update/${task._id}`, {
+        const res = await fetch(`https://final-backend-ubty.onrender.com/api/tasks/update/${task._id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ activity: newActivity }),

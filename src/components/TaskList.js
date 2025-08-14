@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import TaskRow from './TaskRow';
 import AddTaskForm from './AddTaskForm';
 
-const API_BASE = 'http://localhost:5000/api/tasks';
+const API_BASE = 'https://final-backend-ubty.onrender.com/api/tasks';
 
 export default function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -30,8 +30,8 @@ export default function TaskList() {
           <TaskRow 
           key={task._id} 
           task={task}
-           onUpdated={fetchTasks}  // refresh after edit
-          onDeleted={fetchTasks}  // refresh after delete/>
+           onUpdated={fetchTasks}  
+          onDeleted={fetchTasks}  
         />))}
       </ul>
     </div>

@@ -24,7 +24,7 @@ setLoading(true);
 setError('');
 
 try {
-    const res = await fetch(`http://localhost:5000/api/tasks/add`, {
+    const res = await fetch(`https://final-backend-ubty.onrender.com/api/tasks/add`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ activity: text }),
